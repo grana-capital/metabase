@@ -2,6 +2,7 @@
 import { Component } from "react";
 import { t } from "ttag";
 import Humanize from "humanize-plus";
+import Markdown from "metabase/core/components/Markdown";
 
 export default class ExpandableString extends Component {
   constructor(props, context) {
@@ -41,7 +42,7 @@ export default class ExpandableString extends Component {
     if (this.state.expanded) {
       return (
         <span>
-          {this.props.str}{" "}
+          <Markdown>{this.props.str}</Markdown>{" "}
           <span
             className="block mt1 link"
             onClick={this.toggleExpansion}
